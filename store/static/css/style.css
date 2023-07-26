@@ -1,0 +1,36 @@
+#title{
+    color:rgb(182, 17, 166);
+}
+.list{
+  line-height: 30px;
+  color:black;
+}
+.list:hover{
+    font-size: large;
+    font-weight: bold;
+    text-decoration: none;
+}
+.f{
+    border-color: skyblue;
+}
+.n{
+    color:white;
+}
+.n:hover{
+    color:white;
+    font-weight: bold;
+    text-decoration:none;
+    font-size:large;
+}
+.pag{
+    height: 30px;
+    width:30px;
+}
+.h{
+    height:40px;
+}
+@media only screen and (max-width: 900px) {
+   .n{
+    color:black
+   }
+  }

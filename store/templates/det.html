@@ -1,0 +1,19 @@
+
+{%extends 'base.html'%}
+<br><br>
+{% block body %}
+
+<br>
+  <h4>Title: {{ title }}</h4>
+  <br>
+  <br><br>
+  <p><strong>price :</strong> {{ price }}</p> <!-- author detail link not yet defined -->
+  <p><strong>no: arived :</strong> {{no_of_stock}}</p>
+  <p><strong>status :</strong> {{status}}</p> 
+  {%if expiry < t%}
+  <p ><strong>expiry :</strong > <span class="text-danger">{{exp}}</span></p> 
+  {%else%} 
+  <p ><strong>expiry :</strong><span class="text-success">{{exp}}</span></p>  
+  {%endif%}
+ <a href="{%url 'listview'%}" class="btn btn-success">Back</a>
+{% endblock %}

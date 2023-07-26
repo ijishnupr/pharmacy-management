@@ -1,0 +1,35 @@
+{%extends 'base.html'%}
+{%block body%}
+<br><br><br>
+<h4>medicine Edit</h4>
+<form method="post">
+    <div class="row">
+        <div class="col col-4">
+{%load static%}
+            <div class="form-group">
+                
+                {% csrf_token %}
+                
+                
+                {{ form.title.label_tag }}
+                <input type="text" name="title" placeholder={{medicine.title}} class="form-control f">
+                
+                {{ form.price.label_tag }}
+                <input type="number" name="price" placeholder={{medicine.price}} class="form-control f">
+                {{ form.no_of_pack.label_tag }}
+                <input type="number" name="no_of_pack" placeholder={{medicine.no_of_pack}} class="form-control f">
+                
+                {{ form.exp.label_tag }}
+                <input type="date" name="exp" placeholder={{medicine.exp}} class="form-control f">
+                
+            </div>
+            <div style="margin-bottom: 10px;">
+                {{ form.status.label_tag }}
+                {{ form.status }}
+            </div>
+            <input type="submit" value="Submit" class="btn btn-success">
+        </form>
+    </div>
+</div>
+</div>
+{%endblock body%}

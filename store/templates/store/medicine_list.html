@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>curemart</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+{%load static%}
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+</head>
+<body style="background-image:url('{% static "images/bg.jpg"%}')";">
+  <div class="container-fluid">
+
+    <div class="row" style="height:790px">
+      <div class="col">
+<br><br>
+        <h2 id="title" >curemart</h2>
+        <br><br><br>
+        <h4>List of medicine</h4>
+        <br><br>
+        
+        {% if medicine_list %}
+        <ul>
+    {% for medicine in object_list %}
+    <li>
+      <div class="row">
+        <div class="col ">
+          
+          <h6><a href="{% url 'detailview' medicine.pk %}"class="list"> {{medicine.title }}</a>
+          </div>
+          <div class="col">
+            
+            <a class="btn btn-success btn-sm" href="{%url 'update' medicine.pk%}">edit</a>
+            
+          </div><div class="col ">
+            
+            <a href="{%url 'delete' medicine.pk%}" class="btn btn-danger btn-sm">delete</a></h6>
+            </div>          </div>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>There are no medicine in the shop.</p>
+  {% endif %}
+  
+  {% block pagination %}
+  {% if is_paginated %}
+  <div class="pagination">
+    <span class="page-links">
+      {% if page_obj.has_previous %}
+      <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}"><img class="pag" src="{%static 'images/back.png'%}"></a>
+      {% endif %}
+      <span class="page-current">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+      </span>
+      {% if page_obj.has_next %}
+      <a href="{{ request.path }}?page={{ page_obj.next_page_number }}"><img class="pag" src="{%static 'images/next.png'%}"></a>
+      {% endif %}
+    </span>
+  </div>
+  {% endif %}
+  {% endblock %} 
+  <br><br><br>
+  <a class="btn btn-success " href="{%url 'index'%}">Back</a>       
+</div>
+<div class="col d-none d-xl-block mx-auto text-center">
+</div>
+<div class="col d-none d-xl-block mx-auto text-center">
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

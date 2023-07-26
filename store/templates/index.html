@@ -1,0 +1,52 @@
+{%extends "base.html"%}
+{%block body %}
+{%load static%}
+<div class="row">
+    <div class="col text-right d-none d-lg-block">
+        <h6>you are {{h}}</h6>
+        <h6>time <span id="time"></span></h6>
+        <h6>date: {{t}}</h6>
+        <script>
+            setInterval(showtime,1000);
+function showtime(){
+    let time=new Date();
+    let hour=time.getHours() % 12 || 12;
+    let min=time.getMinutes();
+    let sec=time.getSeconds();
+    document.getElementById("time").innerHTML=hour+":"+min+":"+sec;
+}
+showtime();
+        </script>
+    </div>
+</div>
+<br><br><br>
+
+
+
+        <form method="get" action="{%url 'search'%}">
+            <div class="form-inline">
+
+                {%load static%}
+                <input type="text" placeholder="search..." name="search" class="form-control bg-light" style="border:2px solid skyblue; border-radius: 20px;">
+                <button type="submit" class="btn">
+                    <img src="{% static 'images/search.png' %} " style="height:40px;width:40px;">
+                  </button>
+                  
+            </div>
+            </div>
+        </form>
+    </div>
+</div>
+ 
+<div class="row mt-5">
+    <div class="col-7 mt-5">
+        
+        <a href="{%url 'listview' %}" class="btn btn-warning h4 ml-5" style="text-decoration: none; border-radius: 20px;" >Show list</a>
+        
+        <br><a href="{%url 'create'%}" class="btn btn-info h4 ml-5" style="text-decoration: none; border-radius: 20px;">Add medicine</a>
+        <br><a href="{%url 'listview'%}" class="btn btn-info h4 ml-5" style="text-decoration: none; border-radius: 20px;">edit medicine</a>
+        
+    </div>
+ 
+</div>
+{%endblock body %}

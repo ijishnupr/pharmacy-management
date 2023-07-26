@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>curemart</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body class="bg-info">
+  <div class="container ">
+    <div class="col col-lg-5 col-md-7 col-sm-8 col-8  mx-auto d-block rounded bg-light mt-5 pb-2">
+      <div class="row">
+
+        <div class="col mt-5 mb-4">
+          <h3>log In</h3>
+          <br>
+          <br>
+          <form method="post" action="">
+            {%csrf_token%}
+
+
+            <input type="text" class="form-control" placeholder="username" name="username">
+            <input type="password" class="form-control mt-3" mt-3 placeholder="password" name="password">
+
+            <button class="btn btn-lg bg-info text-light mt-3">
+              <h6>Log In</h6>
+            </button>
+        </div>
+        </form>
+
+      </div>
+        </div>
+        <div class="row">
+          <div class="col text-center text-white">
+            <p>don't have an account? <a class="text-white " href="{%url 'signupp'%}">signup</a></p>
+          </div>
+        </div>
+</body>
+
+</html>

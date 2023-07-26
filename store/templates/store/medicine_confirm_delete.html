@@ -1,0 +1,6 @@
+
+<h1>Book Delete</h1>
+<form method="post">{% csrf_token %}
+    <h4>Are you sure you want to delete "{{ object }}" ? </h4>
+    <input type="submit" value="Submit" style="background-color: red;color:white;border:1px;border-radius: 9px;width:150px;height:30px;">
+</form>

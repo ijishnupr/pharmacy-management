@@ -1,0 +1,22 @@
+{%extends 'about.html'%}
+{%block result%}
+
+   {% if query %}
+              <h2>
+              {% with results.count as total_results %}
+              Found {{ total_results }} result{{ total_results|pluralize }}
+              {% endwith %}
+              </h2>
+              <br><br>
+      {% for c in result %}
+     <a href="{%url 'detailview' c.pk%}" class="btn btn-danger btn-lg">{{c.title}}&nbsp;-
+     {{c.price}}&#8377;</a>
+   <br><br>
+      {% empty %}
+      <h3>No results found.</h3>
+      {% endfor %}
+     {% endif %}
+           
+           <br>
+           
+{%endblock%}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ex1</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body class="bg-info">
+  <div class="container ">
+    <div class="col col-lg-5 col-md-7 col-sm-8 col-8  mx-auto d-block rounded bg-light mt-5 pb-2">
+      <div class="row">
+        <div class="col mt-3 ml-2">
+          {%block logout%}
+          <h2>Sign up</h2>
+          <form method="post">
+            {%csrf_token%}
+
+            <div class="form-group">
+
+              <input type="text" class="form-control" placeholder="First name" name="fname">
+              <input type="email" class="form-control mt-3" placeholder="Email" name="email">
+              <input type="password" class="form-control mt-3" mt-3 placeholder="password" name="password1">
+              <input type="password" class="form-control mt-3" mt-3 placeholder="confirm password" name="password2">
+
+              <button type="submit" class="btn bg-info text-light mx-auto d-block mt-4">
+                <h6>Sign Up</h6>
+              </button>
+            </div>
+          </form>
+
+
+        </div>
+
+
+      </div>
+      <div class=" col mx-auto d-block  mt-2 text-center text-light">
+        <p class="plast">Already have an account? <a href="{%url 'loginpage'%}" class="alast">Login here.</a> </p>
+      </div>
+      {%endblock logout%}
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+{%block body%}
+<br><br><br>
+<h4>add medicine</h4>
+<form method="post">
+    <div class="row">
+        <div class="col col-4">
+{%load static%}
+            <div class="form-group">
+                
+                {% csrf_token %}
+                
+                
+                <label >title: </label>
+                <input type="text" name="title" class="form-control f">
+                
+                <label>price:</label>
+                <input type="number" name="price" class="form-control f">
+                <label>number of pack arrived:</label>
+                <input type="number" name="no_of_pack" class="form-control f">
+                
+                <label>expiery date:</label>
+                <input type="date" name="exp" class="form-control f">
+                
+            </div>
+            <div style="margin-bottom: 10px;">
+                <label>status:</label>
+                <select name="status">
+                    <option value="i">in stock</option>
+                    <option value="o">out of stock</option>
+                </select>
+            </div>
+            <input type="submit" value="Submit" class="btn btn-success">
+        </form>
+    </div>
+</div>
+</div>
+{%endblock body%}

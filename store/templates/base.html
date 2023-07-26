@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curemart</title>
+    {%load static%}
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <script type="text/javascript" src="{%static 'js/scripts.js'%}"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body id="body"style="background-image:url('{% static "images/bg.jpg"%}'); overflow:hidden">
+    <div class="container-fluid">
+        
+      
+      <div class="row">
+          <div class="col col-8 d-none d-lg-block ">
+
+          </div>
+            <div class="col h">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a class="nav-link font-weight-bold n" href="{%url 'index'%}">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link font-weight-bold n" href="{%url 'about'%}">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link font-weight-bold n" href="{%url 'logoutpage'%}">Logout</a>
+                </li>
+              </ul>
+              
+            </div>
+          </div>
+          <h2 id="title" >curemart</h2>
+        {%block body%}
+        {%endblock body%}
+        
+    </div>
+    
+</body>
+</html>

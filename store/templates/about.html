@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curemart</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-5">
+                {%block result%}
+                <h2 >About</h2>
+                <p class="mt-5">Welcome to CureMart, your one-stop destination for all your medical supply needs. At CureMart,
+                     we are committed to providing exceptional service and top-quality products to healthcare professionals
+                      and individuals alike. With our vast inventory of pharmaceuticals, medical equipment, and healthcare 
+                      essentials, we strive to ensure that you find everything you need conveniently under one roof. 
+                      Our user-friendly interface allows for effortless browsing, seamless ordering, and secure payment 
+                      options, giving you a stress-free shopping experience. Whether you're a hospital, clinic, or simply 
+                      someone looking for reliable medical supplies, CureMart has got you covered. Trust in our dedication to
+                       excellence and customer satisfaction as we endeavor to be your trusted partner in healthcare management. 
+                       Join us on this journey towards a healthier tomorrow with CureMart at your service.</p>
+                       {%endblock%}
+                       <a class="btn btn-info" href="{%url 'index' %}">Back</a>
+            </div>
+            <div class="col bg-info d-none d-lg-block text-center" style="height:791px;">
+                <h2 style="color:white;margin-top: 380px;">curemart</h2>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
